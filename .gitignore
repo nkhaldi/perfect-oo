@@ -1,0 +1,21 @@
+# Cache
+__pycache__/
+
+# dotenv
+.env
+
+# Virtual environments
+env/
+ENV/
+venv/
+.venv/
+Pipfile
+Pipfile.lock
+
+# IDE
+.idea/
+.vscode/
+
+# Databases
+db.sqlite3
+dump.rdb
