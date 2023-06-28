@@ -1,11 +1,9 @@
 from django.db import models
 
+from authors.models import Author
+
 
 class Genre(models.Model):
-    name = models.CharField(max_length=256)
-
-
-class Author(models.Model):
     name = models.CharField(max_length=256)
 
 
