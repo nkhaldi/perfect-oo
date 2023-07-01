@@ -4,7 +4,7 @@ from authors.models import Author
 from utils.constants import Status
 
 
-class Book(models.Model):
+class Course(models.Model):
     title = models.CharField(max_length=256)
     author = models.ForeignKey(Author, on_delete=models.PROTECT)
     platform = models.CharField(max_length=256)
