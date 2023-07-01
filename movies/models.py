@@ -9,4 +9,4 @@ class Movie(models.Model):
     status = models.CharField(max_length=128, default=Status.PENDING)
     series = models.CharField(max_length=256, blank=True, null=True)
     genre = models.CharField(max_length=256, blank=True, null=True)
-    author = models.ForeignKey(Author, on_delete=models.PROTECT, blank=True, null=True)
+    author = models.ForeignKey(Author, on_delete=models.PROTECT)
