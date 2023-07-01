@@ -6,6 +6,6 @@ from utils.constants import Status
 
 class Book(models.Model):
     title = models.CharField(max_length=256)
+    author = models.ForeignKey(Author, on_delete=models.PROTECT)
     platform = models.CharField(max_length=256)
     status = models.CharField(max_length=128, default=Status.PENDING)
-    author = models.ForeignKey(Author, on_delete=models.PROTECT)
