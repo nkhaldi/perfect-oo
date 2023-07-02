@@ -21,7 +21,7 @@ class CoursePlatformAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ("title", "author", "platform", "status")
-    fields = ("title", "author", "platform", "status")
-    search_fields = ("title", "author", "platform", "status")
-    ordering = ("title", "author", "platform", "status")
+    list_display = ("title", "author", "platform", "link", "status")
+    fields = ("title", "author", "platform", "link", "status")
+    search_fields = ("title", "author", "platform", "link", "status")
+    ordering = ("title", "author", "platform", "link", "status")
