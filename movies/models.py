@@ -10,3 +10,6 @@ class Movie(models.Model):
     series = models.CharField(max_length=256, blank=True, null=True)
     genre = models.CharField(max_length=256, blank=True, null=True)
     status = models.CharField(max_length=128, default=Status.PENDING)
+
+    def __str__(self) -> str:
+        return self.title
