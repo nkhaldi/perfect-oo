@@ -27,9 +27,18 @@ class Genre(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=256)
     author = models.ForeignKey(to=Author, on_delete=models.PROTECT)
-    series = models.ForeignKey(to=Series, on_delete=models.PROTECT)
     genre = models.ForeignKey(to=Genre, on_delete=models.PROTECT)
-    status = models.ForeignKey(to=Status, on_delete=models.PROTECT)
+    series = models.ForeignKey(
+        to=Series,
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True,
+    )
+    status = models.ForeignKey(
+        to=Status,
+        on_delete=models.PROTECT,
+        default=Status.objects.get_or_create(name="pending")[0].id,
+    )
 
     def __str__(self) -> str:
         return self.title

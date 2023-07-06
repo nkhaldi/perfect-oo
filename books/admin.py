@@ -29,7 +29,7 @@ class BookSeriesAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ("title", "author", "series", "genre", "status")
-    fields = ("title", "author", "series", "genre", "status")
-    search_fields = ("title", "author", "series", "genre", "status")
-    ordering = ("title", "author", "series", "genre", "status")
+    list_display = ("title", "author", "genre", "series", "status")
+    fields = ("title", "author", "genre", "series", "status")
+    search_fields = ("title", "author", "genre", "series", "status")
+    ordering = ("title", "author", "genre", "series", "status")
