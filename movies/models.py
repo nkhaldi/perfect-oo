@@ -26,18 +26,19 @@ class Genre(models.Model):
 
 class Movie(models.Model):
     title = models.CharField(max_length=256)
-    author = models.ForeignKey(to=Author, on_delete=models.PROTECT)
-    genre = models.ForeignKey(to=Genre, on_delete=models.PROTECT)
+    author = models.ForeignKey(to=Author, on_delete=models.SET_NULL, null=True)
+    genre = models.ForeignKey(to=Genre, on_delete=models.SET_NULL, null=True)
     series = models.ForeignKey(
         to=Series,
-        on_delete=models.PROTECT,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
     )
     status = models.ForeignKey(
         to=Status,
-        on_delete=models.PROTECT,
-        default=Status.objects.get_or_create(name="pending")[0].id,
+        on_delete=models.SET_NULL,
+        default=Status.objects.get_or_create(name="Pending")[0].id,
+        null=True,
     )
 
     def __str__(self) -> str:
