@@ -1,14 +1,14 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-4ft5bpwq&+!c)f@_b2!2k70-ifvs!p85_%ap-#7p#kei#(schy"
+DEBUG = os.getenv("DEBUG") == "True"
 
-DEBUG = True
+SECRET_KEY = os.os.getenv("SECRET_KEY")
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -56,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "perfect.wsgi.application"
+WSGI_APPLICATION = os.getenv("WSGI_APPLICATION")
 
 
 # Database
