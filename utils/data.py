@@ -3,6 +3,13 @@ from typing import Dict
 
 
 def get_from_csv(data_file: str) -> Dict:
+    """
+    Get data from .csv file with structure "author,title"
+
+    :param data_file: Path to the file with data
+    :return: Dict with parsed data in format {'author': 'title'}
+    """
+
     data = dict()
 
     with open(data_file, "r") as file:
