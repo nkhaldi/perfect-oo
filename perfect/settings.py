@@ -1,12 +1,17 @@
-import os
 from pathlib import Path
+
+from environ import Env
 
 # Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = os.getenv("DEBUG") == "True"
+# Setup .env values
+env = Env()
+Env.read_env(BASE_DIR / ".env")
 
-SECRET_KEY = os.os.getenv("SECRET_KEY")
+DEBUG = env("DEBUG")
+
+SECRET_KEY = env("SECRET_KEY")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -56,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = os.getenv("WSGI_APPLICATION")
+WSGI_APPLICATION = "perfect.wsgi.application"
 
 
 # Database
